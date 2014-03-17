@@ -1,7 +1,7 @@
 NewtonScript Module for TextWrangler
 ====================================
 
-by Simon Bell <simonbell@me.com>
+by Simon Bell <simon@newtonresearch.org>
 
 A [TextWrangler](http://http://www.barebones.com/products/textwrangler/) [Codeless Language Module](http://www.barebones.com/support/develop/clm.html) for the NewtonScript language.
 Keywords & functions sourced from [The NewtonScript Programming Language](http://manuals.info.apple.com/en_US/NewtonScriptProgramLanguage.PDF) 1996, Apple Computer, Inc.
@@ -9,14 +9,14 @@ Keywords & functions sourced from [The NewtonScript Programming Language](http:/
 SUPPORTS
 --------
 
-* Single & Multi-line Comments
+* Single & multi-line comments
 * Strings
 * Numbers
 * Keywords
 * Block parsing & code folding:
   * begin/end
-  * Frames
-  * Arrays
+  * frames
+  * arrays
 
 TO-DO
 -----
