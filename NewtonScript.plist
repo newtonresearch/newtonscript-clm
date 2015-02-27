@@ -7,7 +7,7 @@
 	<key>BBLMColorsSyntax</key>
 	<true/>
 	<key>BBLMIsCaseSensitive</key>
-	<true/>
+	<false/>
 	<key>BBLMKeywordList</key>
 	<array>
 		<string>and</string>
@@ -80,24 +80,47 @@
 		<string>(//.*$)|(\/\*(?s).*?(?-s)\*\/)</string>
 		<key>String Pattern</key>
 		<string>"(\\.|[^"])*+"</string>
-		<key>Open Block Comments</key>
-		<string>/*</string>
-		<key>Close Block Comments</key>
-		<string>*/</string>
-		<key>Open Line Comments</key>
-		<string>//</string>
-		<key>Prefix for Functions</key>
-		<string>func</string>
-		<key>Prefix for Procedures</key>
-		<string>func</string>
-		<key>Open Parameter Lists</key>
-		<string>(</string>
-		<key>Close Parameter Lists</key>
-		<string>)</string>
+		<key>Skip Pattern</key>
+		<string><![CDATA[
+		(?x:
+			(?P>comment) |
+			(?P>string)
+		)]]></string>
 		<key>Open Statement Blocks</key>
 		<string>begin</string>
 		<key>Close Statement Blocks</key>
 		<string>end</string>
+
+		<key>Function Pattern</key>
+		<string><![CDATA[
+		(?x:
+			(?P<function>
+				(?P<function_name>[A-Za-z][A-Za-z0-9_]*)
+				(?: (?> (?> \s+ ) | (?P>comment) ) )*
+				:=?
+				(?: (?> (?> \s+ ) | (?P>comment) ) )*
+				func
+				(?: (?> (?> \s+ ) | (?P>comment) ) )*
+				(\( | (?>\bnative\b (?>\s*) | (?P>comment) \())
+				(?: (?> (?> [^/)]+ ) | (?P>comment) ) )*
+				\)
+				(?s: .*? )
+				(?P<block>
+					(?> \b begin \b )
+						(?:
+							(?:
+								(?> [^"/a-z]+ ) |
+								(?> (?(?! \b (?: begin | end ) \b ) [a-z]+ [^"/a-z]* ) ) |
+								(?P>comment) |
+								(?P>string) |
+								(?P>block)
+							)
+						)*?
+					\b end \b
+				)
+			)
+		)]]></string>
+
 	</dict>
 </dict>
 </plist>
