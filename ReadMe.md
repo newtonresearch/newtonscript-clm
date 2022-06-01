@@ -1,10 +1,8 @@
-NewtonScript Module for TextWrangler
+NewtonScript Module for BBEdit
 ====
 
-by Simon Bell <simon@newtonresearch.org>
-
-A [TextWrangler](http://http://www.barebones.com/products/textwrangler/) [Codeless Language Module](http://www.barebones.com/support/develop/clm.html) for the NewtonScript language.
-Keywords & functions sourced from [The NewtonScript Programming Language](http://manuals.info.apple.com/en_US/NewtonScriptProgramLanguage.PDF) 1996, Apple Computer, Inc.
+A [BBEdit](http://www.barebones.com/products/bbedit/) [Codeless Language Module](http://www.barebones.com/support/develop/clm.html) for the NewtonScript language.
+Keywords & functions sourced from [The NewtonScript Programming Language](https://www.newted.org/download/manuals/NewtonScriptProgramLanguage.pdf) 1996, Apple Computer, Inc.
 
 SUPPORTS
 ----
@@ -23,4 +21,4 @@ But functions in frame slots or assigned to a variable do appear in the editorâ€
 INSTALLATION
 ----
 
-Copy the NewtonScript.plist file to ~Library/Application Support/TextWrangler/Language Modules/. Quit and relaunch TextWrangler for the module to take effect.
+Copy the NewtonScript.plist file to ~Library/Application Support/BBEdit/Language Modules/. Quit and relaunch BBEdit for the module to take effect.
